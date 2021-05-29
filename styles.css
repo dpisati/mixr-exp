@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&family=Montserrat&family=Ubuntu:wght@400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: #E1E1E6;
+}
+
+body {
+    background: black;
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#box-shadow-div-back {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;   
+    left: 0;
+    background: rgb(126, 255, 126);
+    animation: animate 10s linear infinite;
+    filter: opacity(.3);
+    filter: blur(2000px);
+}
+
+#box-shadow-div {
+    position: absolute;
+    top: 0;   
+    left: 0;
+    width: 300px;
+    height:300px;
+    background: rgb(126, 255, 126);
+    border-radius: 100%;
+    box-shadow: 0 0 10px #000;
+    filter: blur(100px);
+}
+
+.hexagon {
+    position: relative;
+    width: 100px;
+    height: 110px;
+    background: #111;
+    margin: 1px;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.hexagon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    pointer-events: none;
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.row {
+    display: inline-flex;
+    margin-top: -30px;
+    margin-left: -50px;
+}
+
+.row:nth-child(even) {
+    margin-left: 1px;
+}
+
+@keyframes animate {
+    0% {
+        opacity: .01;
+    }
+    50% {
+        opacity: .8;
+
+    }
+    100% {
+        opacity: .01;
+    }
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #F8F8F8;
+    width: 500px;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    padding: 50px;
+    transform: translate(-50%, -50%);
+    /* pointer-events: none; */
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(39, 39, 39, 0.384);
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 7px );
+    border-radius: 10px;
+    border: 1px solid rgba(230, 230, 230, 0.18);
+}
+
+
+
+.card > h1 {
+    font-family: 'Lalezar', cursive;
+    font-weight: normal;
+    font-size: 3rem;
+    line-height: 3rem;
+    color: rgb(241, 241, 241);
+}
+
+.card > spam {
+    color: #A5A5B0;
+}
+
+.card > img {
+    height: 80px;
+    margin-top: 40px;
+    border-radius: 5px;
+}
+
+.card > main {
+    margin-top: 40px;
+}
+
+.card > main > h4,
+.card > main > h4 > strong {
+    font-family: 'Ubuntu', sans-serif;
+    color: #E1E1E6;  
+    font-size: 1.4rem;  
+}
+
+.card > main > h4 > strong {
+    color: #7E41A5;
+    font-weight: 700;
+}
+
+.card > main > p {
+    margin-top: 40px;
+    color: #A5A5B0;
+    font-size: .9rem;
+    text-align: justify;
+    line-height: 1.5rem;
+}
+
+.card > main > button {
+    width: 180px;
+    height: 50px;
+    border-radius: 25px;
+    background: #7E41A5;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 60px;
+    transition: .2s;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+
+.card > main > button:hover {
+    background: #582A74;
+}
+
+.card > footer {
+    position: absolute;
+    bottom: 30px;
+}
+
+.card > footer > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card > footer > a > p {
+    color: #A5A5B0;
+}
+
+footer > a {
+    text-decoration: none;
+}
+
+footer > a > svg {
+    margin: 0 15px;
+}
+
+.mixr {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    height: 60px;
+}
+
+@media (max-width: 420px) {
+    .card {
+        width: 90vw;
+        padding: 40px 20px;
+    }
+
+    .card > h1 {
+        font-size: 2rem;
+    }
+
+    .card > img {
+        height: 60px;
+        margin-top: 20px;
+    }
+
+    .card > main > h4,
+    .card > main > h4 > strong {
+        font-size: .9rem;
+    }
+
+    .card > main > p {
+        margin-top: 20px;
+        font-size: .8rem;
+        line-height: .9rem;
+        text-align: center;
+    }
+
+    .card > main > button {
+        margin-bottom: 40px;
+        margin-top: 30px;
+        height: 40px;
+        width: 140px;
+    }
+
+    .card > footer > a > p {
+        font-size: .8rem;
+    }
+    
+    footer > a > svg {
+        margin: 0 8px;
+    }
+
+    .mixr {
+        height: 40px;
+    }
+}
+
+@media (width: 320px) {
+    .mixr {
+        height: 20px;
+    }
+}
