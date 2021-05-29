@@ -25,9 +25,8 @@ body {
     top: 0;   
     left: 0;
     background: rgb(126, 255, 126);
-    animation: animate 10s linear infinite;
+    animation: animate 5s linear infinite;
     filter: opacity(.3);
-    filter: blur(2000px);
 }
 
 #box-shadow-div {
@@ -222,8 +221,8 @@ footer > a > svg {
     .card > main > p {
         margin-top: 20px;
         font-size: .8rem;
-        line-height: .9rem;
-        text-align: center;
+        line-height: 1.2rem;
+        /* text-align: center; */
     }
 
     .card > main > button {
@@ -244,6 +243,33 @@ footer > a > svg {
     .mixr {
         height: 40px;
     }
+
+    .hexagon {
+        width: 50px;
+        height: 60px;
+        margin:.5px;
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    }
+    
+    .hexagon::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        pointer-events: none;
+        background-color: rgba(255, 255, 255, 0.02);
+    }
+    .row {
+        margin-top: -15px;
+        margin-left: -25px;
+    }
+    
+    .row:nth-child(even) {
+        margin-left: 1px;
+    }
+    
 }
 
 @media (width: 320px) {
